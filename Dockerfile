@@ -11,6 +11,6 @@ FROM python:3.11
 WORKDIR /code
 COPY --from=requirements-stage /tmp/requirements.txt .
 RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
-COPY . .
+COPY /Users/lawliet/NFactorial/hw-backend-6-Beka188/app/main.py /code
 
 ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
